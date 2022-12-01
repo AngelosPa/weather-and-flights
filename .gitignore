@@ -8,3 +8,4 @@ sqlalchemy_iss.ipynb
 iss_sql_workshop_create_db.sql
 .env 
 sqlalchemy_for_aws_original.ipynb
+__pycache__
