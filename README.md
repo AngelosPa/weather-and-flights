@@ -9,15 +9,15 @@ Tech used:
 ## Python:
 
 - Pandas
-  pip install pandas
+  `pip install pandas`
 - sqlalchemy
-  pip install sqlalchemy
+  `pip install sqlalchemy`
 - beautifulsoup4
-  pip install beautifulsoup4
-- os pip
-  install os
+  `pip install beautifulsoup4`
+- os
+  `pip install os`
 - requests
-  pip install requests
+  `pip install requests`
 
   Datasets & sources:
 
