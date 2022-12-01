@@ -81,17 +81,12 @@ def get_nextday_arrivals(lat, log):
     return pd.concat(arrivals_for_each_airport, ignore_index=True)
 
 
-"""You can chooose any city but only sure that the coordinates are accurate. """
-
 London = get_nextday_arrivals("51.511142", "-0.103869")
 Madrid = get_nextday_arrivals("40.2500", "03.4209")
 Rome = get_nextday_arrivals("41.5336", "12.2858")
 Paris = get_nextday_arrivals("48.5124", "2.2108")
 all_cities_arrival = [Madrid, Rome, Paris]
 
-"""Now that we have the list lets concatinate it and create a (clean)Dataframe with:
-
-"""
 
 all_cities_arrival_df = pd.concat(all_cities_arrival, ignore_index=True)
 all_cities_arrival_df['arrival_time'] = pd.to_datetime(

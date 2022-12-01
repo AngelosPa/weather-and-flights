@@ -17,34 +17,29 @@ eu_cities = []
 population = []
 country = []
 latitude = []
-longitude = []
-eu_cities_dicitonary = {}
-for row in rows[1:]:
-    eu_cities.append(row.find_all('td')[1].get_text())
-    population.append(row.find_all('td')[3].get_text())
-    country.append(row.find_all('td')[2].get_text())
+longitude = []  # to append information into different arrays
+eu_cities_coordinates = []
 
-# for link in eu_cities:
-#     url = f'https://en.wikipedia.org/wiki/{link}'
-#     headers = {'Accept-Language': 'en-US,en;q=0.8'}
-#     response = requests.get(url, headers=headers)
-#     eu_cities_coordinates.append(
-#         BeautifulSoup(response .content, 'html.parser'))
-# for city in eu_cities_coordinates:
-#     if (len(city.select("span .latitude")) == 0):
-#         latitude.append(0)
-#         longitude.append(0)
-#     else:
-#         latitude.append(city.select("span .latitude")[0].get_text())
-#         longitude.append(city.select("span .longitude")[0].get_text())
-
+for link in eu_cities:
+    url = f'https://en.wikipedia.org/wiki/{link}'
+    headers = {'Accept-Language': 'en-US,en;q=0.8'}
+    response = requests.get(url, headers=headers)
+    eu_cities_coordinates.append(
+        BeautifulSoup(response.content, 'html.parser'))
+# to get coordinates
+for city in eu_cities_coordinates:
+    if (len(city.select("span .latitude")) == 0):
+        latitude.append(0)
+        longitude.append(0)
+    else:
+        latitude.append(city.select("span .latitude")[0].get_text())
+        longitude.append(city.select("span .longitude")[0].get_text())
 
 cities_dicitonary = {}
 values = [eu_cities, population, country,
-          #     latitude, longitude
+          latitude, longitude
           ]
-cols = ["eu_cities", "population", "country"
-        #   , "latitude", "longitude"
+cols = ["eu_cities", "population", "country", "latitude", "longitude"
         ]
 for key, value in zip(cols, values):
     cities_dicitonary[key] = value

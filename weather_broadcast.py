@@ -43,7 +43,7 @@ def weather_boradcast(towns_list):
     return pd.concat(dataframes_for_each_town, ignore_index=True)
 
 
-"""And here is the second dataframe"""
+
 
 top_cities_weather = weather_boradcast(["Madrid", "Rome", "Paris"])
 top_cities_weather.sample(10)
