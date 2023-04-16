@@ -1,4 +1,4 @@
-# data-engineering-basics
+# weather and flights
 
 A journey into data engineering. This repository contains the code and notes for Python workflows such as API calls and web scraping. The results can be used to build an automated data pipeline in the cloud.
 
